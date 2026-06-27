@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desenvolvimento Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #0b0f1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      padding: 32px 20px;
+      color: #e2e8f4;
+    }
+
+    .code-tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      color: #4ade9a;
+      margin-bottom: 20px;
+      opacity: 0.7;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #4ade9a, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #64748b;
+      text-align: center;
+      max-width: 380px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .btn {
+      position: relative;
+      background: linear-gradient(135deg, #4ade9a, #3b82f6);
+      border: none;
+      border-radius: 14px;
+      padding: 16px 40px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      color: #0b0f1a;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 0 32px rgba(74,222,154,0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 48px rgba(74,222,154,0.4);
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .mensagem {
+      display: none;
+      margin-top: 36px;
+      background: #131929;
+      border: 1px solid #1e2d45;
+      border-left: 4px solid #4ade9a;
+      border-radius: 12px;
+      padding: 20px 24px;
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .mensagem .label {
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      color: #4ade9a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .mensagem p {
+      font-size: 15px;
+      color: #c8d6ea;
+      line-height: 1.7;
+    }
+
+    .mensagem p strong { color: #e8edf5; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 28px;
+    }
+
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot:nth-child(1) { background: #ef4444; }
+    .dot:nth-child(2) { background: #f59e0b; }
+    .dot:nth-child(3) { background: #4ade9a; }
+
+    footer {
+      margin-top: 56px;
+      font-size: 12px;
+      color: #2d3f57;
+      font-family: 'Fira Code', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <p class="code-tag">&lt;desenvolvedor em formação /&gt;</p>
+
+  <h1>Aprenda <span>Desenvolvimento<br/>Web</span> de verdade.</h1>
+
+  <p class="subtitle">HTML estrutura, CSS estiliza e JavaScript dá vida. Clique no botão e veja a mágica acontecer.</p>
+
+  <button class="btn" onclick="mostrarMensagem()">✦ Clique aqui</button>
+
+  <div class="mensagem" id="mensagem">
+    <p class="label">// console.log</p>
+    <p>💡 <strong>Olá!</strong> Você está aprendendo <strong>Desenvolvimento Web</strong> — e está indo muito bem!</p>
+  </div>
+
+  <footer>© 2025 — feito com HTML, CSS &amp; JS</footer>
+
+  <script>
+    function mostrarMensagem() {
+      const msg = document.getElementById('mensagem');
+      if (msg.style.display === 'block') {
+        msg.style.display = 'none';
+      } else {
+        msg.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
